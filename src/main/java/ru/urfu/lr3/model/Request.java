@@ -17,10 +17,9 @@ public class Request {
     @NotBlank
     @Length(max = 32)
     private String uid;
-    @NotBlank
     @Length(max = 32)
     private String operationUid;
-    private Systems systemName;
+    private String systemName;
     private String systemTime;
     private String source;
     @Min(1)
@@ -32,15 +31,16 @@ public class Request {
 
     @Override
     public String toString() {
-        return String.format("{ uid:'%s', operationUid:'%s', systemName:'%s', systemTime:'%s', source:'%s', communicationId:'%d', templateId:'%d', productCode:'%d', smsCode:'%d'}",
-                uid,
-                operationUid,
-                systemName,
-                systemTime,
-                source,
-                communicationId,
-                templateId,
-                productCode,
-                smsCode);
+        return "{" +
+                "uid='" + uid + '\'' +
+                ", operationUid='" + operationUid + '\'' +
+                ", systemName='" + systemName + '\'' +
+                ", systemTime='" + systemTime + '\'' +
+                ", source='" + source + '\'' +
+                ", communicationId='" + communicationId + '\'' +
+                ", templateId='" + templateId + '\'' +
+                ", productCode='" + productCode + '\'' +
+                ", smsCode='" + smsCode +
+                '}';
     }
 }
